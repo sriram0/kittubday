@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Kittu!!!</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        h1{
+            color: blue;
+            font-size: 50px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday Kittu!!!</h1>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+<script>
+    function setup(){
+        createCanvas(500, 500)
+    }
+    let spawner=[250, 100]
+    let p=[]
+    function draw(){
+        background("dodgerblue")
+        noStroke()
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*10-5, 0, Math.floor(Math.random()*30)+1, 255, 0, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*6-3, 0, Math.floor(Math.random()*25)+1, 255, 255, 0])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        p.push([spawner[0], spawner[1], Math.random()*4-2, 0, Math.floor(Math.random()*20)+1, 255, 255, 255])
+        for(var i=0;i<p.length;i++){
+            if(p[i][4]===0){
+                p.splice(i, 1)
+            }else{
+                p[i][0]+=p[i][2]/2
+                p[i][1]+=p[i][3]/2
+                p[i][4]--
+                p[i][3]++
+                fill(p[i][5], p[i][6], p[i][7], 255/30*p[i][4])
+                ellipse(p[i][0], p[i][1], 10)//81
+            }
+        }
+        fill("lightgreen")
+        ellipse(spawner[0], spawner[1], 50, 50)
+    }
+</script>
+</html>
